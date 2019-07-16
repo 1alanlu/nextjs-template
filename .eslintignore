@@ -1,0 +1,15 @@
+# dependencies
+node_modules/
+
+# production
+src/__tests__/__snapshots__
+src/.next
+src/build
+src/out
+
+.git
+*.log
+yarn.lock
+package-lock.json
+
+.DS_Store
