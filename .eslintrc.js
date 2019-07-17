@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
+  parser: 'babel-eslint', // 解決 ES6 import 會報錯
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -9,10 +9,10 @@ module.exports = {
     sourceType: 'module',
   },
   env: {
-    node: true,
-    browser: true,
     es6: true,
-    // "commonjs": true
+    browser: true, // 如果不配置browser，window就會被eslint報undefined的錯誤
+    node: true,
+    commonjs: true,
   },
   extends: ['airbnb', 'prettier', 'prettier/react'],
   plugins: ['prettier', 'react', 'react-hooks', 'jsx-a11y', 'import'],
