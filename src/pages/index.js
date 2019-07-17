@@ -4,7 +4,7 @@ import Layout from '@components/Layout'
 
 const PostLink = ({ post }) => (
   <li>
-    <Link href="/p/[id]" as={`/p/${post.id}`}>
+    <Link href="/p/[id]" as={`${process.env.FRONTEND_URL}/p/${post.id}`}>
       <a>{post.name}</a>
     </Link>
     <style jsx>{`

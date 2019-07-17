@@ -1,45 +1,65 @@
+import getConfig from 'next/config'
 import { useRouter } from 'next/router'
-import Markdown from 'react-markdown'
 import Layout from '@components/Layout'
 
-export default () => {
-  const router = useRouter()
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig()
+// Only holds serverRuntimeConfig and publicRuntimeConfig from next.config.js nothing else.
+// const { projectName, staticFolder } = publicRuntimeConfig
+console.log('serverRuntimeConfig', serverRuntimeConfig)
+console.log('publicRuntimeConfig', publicRuntimeConfig)
+
+const TestPageContent = ({ userAgent = '' }) => {
   return (
     <Layout>
-      <h1>{router.query.id}</h1>
-      <div className="markdown">
-        <Markdown
-          source={`
-This is our blog post.
-Yes. We can have a [link](/link).
-And we can have a title as well.
-
-### This is a title
-
-And here's the content.
-      `}
-        />
-      </div>
-      <style jsx global>{`
-        .markdown {
-          font-family: 'Arial';
-        }
-
-        .markdown a {
-          text-decoration: none;
-          color: blue;
-        }
-
-        .markdown a:hover {
-          opacity: 0.6;
-        }
-
-        .markdown h3 {
-          margin: 0;
-          padding: 0;
-          text-transform: uppercase;
-        }
-      `}</style>
+      <h1>userAgent</h1>
+      <div>{userAgent}</div>
+      <hr />
+      <ENVBlock />
+      <hr />
+      <RouterBlock />
     </Layout>
   )
 }
+
+TestPageContent.getInitialProps = async ({ req }) => {
+  const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
+  return { userAgent }
+}
+
+const ENVBlock = () => {
+  return (
+    <>
+      <h1>ENV</h1>
+      <p>NODE_ENV={process.env.NODE_ENV}</p>
+      <p>PORT={process.env.PORT}</p>
+      <p>VERSION={process.env.VERSION}</p>
+      <p>BACKEND_URL={process.env.BACKEND_URL}</p>
+      <p>FRONTEND_URL={process.env.FRONTEND_URL}</p>
+      <p>STATIC_FOLDER={process.env.STATIC_FOLDER}</p>
+    </>
+  )
+}
+
+const RouterBlock = () => {
+  const router = useRouter()
+  // console.log('query', router.query)
+
+  return (
+    <>
+      <h1>router</h1>
+      <div>
+        <p>pathname: {router.pathname}</p>
+        <p>route: {router.route}</p>
+        <p>asPath: {router.asPath}</p>
+        <p>
+          query:
+          {Object.keys(router.query).map(key => {
+            return <span key={key}> {`${key}=${router.query[key]}`} &</span>
+          })}
+        </p>
+      </div>
+    </>
+  )
+}
+
+export default TestPageContent

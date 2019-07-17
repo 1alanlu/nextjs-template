@@ -7,10 +7,16 @@
 ├── .vscode/ (vscode 配置)
 │
 ├── config/ (其他配置)
-│   ├── configForEslintImportResolver.js (別名配置)
+│   ├── configForEslintImportResolver.js (別名 配置)
+│   ├── env-config.js (環境變數 配置)
 │   └── next.runtimeConfig.js (*NextJS 執行期配置)
 │
 ├── node_modules/ (安裝套件)
+│
+├── server/ (服務端)
+│   ├── models/
+│   ├── routes/
+│   └── index.js
 │
 ├── src/
 │   │
@@ -21,15 +27,15 @@
 │   │   │   ├── components/ (組件樣式)
 │   │   │   ├── helpers/ (樣式工具庫)
 │   │   │   ├── pages/ (頁面樣式)
-│   │   │   ├── venders/ (第三方套件樣式)
-│   │   │   ├── venders-extensions/ (第三方套件樣式修改)
+│   │   │   ├── vendors/ (第三方套件樣式)
+│   │   │   ├── vendors-extensions/ (第三方套件樣式修改)
 │   │   │   ├── helpers.scss (工具樣式入口)
 │   │   │   └── main.scss (主要樣式入口)
 │   │   │
 │   │   └── utils/ (工具庫)
 │   │       ├── common/ (通用工具)
 │   │       ├── hooks/ (Hooks工具)
-│   │       └── venders/ (第三方工具)
+│   │       └── vendors/ (第三方工具)
 │   │
 │   ├── build/ (建置)
 │   │
@@ -56,15 +62,14 @@
 │       ├── svg/
 │       └── favicon.ico
 │
-├── .babelrc (babel 配置)
-├── .env (*環境變數)
+├── .babelrc.js (babel 配置)
 ├── .eslintignore (Eslint ignore)
 ├── .eslintrc.js (Eslint 配置)
 ├── .gitattributes (git 規則)
 ├── .gitignore (git ignore)
-├── .postcssrc (PostCss 配置)
+├── .postcssrc.js (PostCss 配置)
 ├── .prettierignore (Prettier ignore)
-├── .prettierrc (Prettier 配置)
+├── .prettierrc.js (Prettier 配置)
 ├── jsconfig.json
 ├── LICENSE (版權聲明)
 ├── next.config.js (*NextJS 配置)

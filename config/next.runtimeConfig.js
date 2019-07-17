@@ -9,13 +9,16 @@ const serverRuntimeConfig = {
 // 客戶端和服務器端代碼都可以訪問的任何內容
 const publicRuntimeConfig = {
   NODE_ENV: process.env.NODE_ENV, // XXX Used in utils/env
-  projectName: process.env.NODE_ENV === 'production' ? '' : '',
+  projectName: process.env.NODE_ENV === 'production' ? '/nextjs-template' : '',
   staticFolder: '/static',
-  GA_TRACKING_ID: '',
 }
 
 const aliasRuntimeConfig = {
   '@components': path.join(__dirname, '../src/components/'),
+  '@context': path.join(__dirname, '../src/context/'),
+  '@static': path.join(__dirname, '../src/static/'),
+  '@utils': path.join(__dirname, '../src/assets/utils/'),
+  '@sass': path.join(__dirname, '../src/assets/sass/'),
 }
 
 module.exports = {

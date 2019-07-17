@@ -5,9 +5,13 @@
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@context/*": ["src/context/*"],
+      "@static/*": ["src/static/*"],
+      "@utils/*": ["src/assets/utils/*"],
+      "@sass/*": ["src/assets/sass/*"]
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist", "src/build", "src/.next"]
+  "exclude": ["node_modules", "dist", "src/.next", "src/build", "src/out"]
 }
