@@ -8,7 +8,6 @@
 │
 ├── config/ (其他配置)
 │   ├── configForEslintImportResolver.js (別名 配置)
-│   ├── env-config.js (環境變數 配置)
 │   └── next.runtimeConfig.js (*NextJS 執行期配置)
 │
 ├── node_modules/ (安裝套件)
@@ -63,6 +62,8 @@
 │       └── favicon.ico
 │
 ├── .babelrc.js (babel 配置)
+├── .editorconfig (團隊統一的寫作規範)
+├── .env (* 環境變數)
 ├── .eslintignore (Eslint ignore)
 ├── .eslintrc.js (Eslint 配置)
 ├── .gitattributes (git 規則)
@@ -70,9 +71,11 @@
 ├── .postcssrc.js (PostCss 配置)
 ├── .prettierignore (Prettier ignore)
 ├── .prettierrc.js (Prettier 配置)
-├── jsconfig.json
+├── .stylelintignore (Stylelint ignore)
+├── .stylelintrc.js (Stylelint 配置)
+├── jsconfig.json (指定根文件和JavaScript的語言服務提供的功能選項)
 ├── LICENSE (版權聲明)
-├── next.config.js (*NextJS 配置)
+├── next.config.js (* NextJS 配置)
 ├── now.json
 ├── package.json (專案 配置)
 ├── README.md
