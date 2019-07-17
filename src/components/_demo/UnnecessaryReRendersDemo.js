@@ -11,6 +11,7 @@ const CountButton = React.memo(({ onClick, count, id }) => {
       {count}
     </button>
   )
+})
 
 const UnnecessaryReRendersDemo = () => {
   const [count1, setCount1] = useState(0)
