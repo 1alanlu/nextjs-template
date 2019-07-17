@@ -1,3 +1,4 @@
 {
+  "prettier.stylelintIntegration": true,
   "cSpell.words": ["systemvars", "stylelint", "precommit", "unfetch"]
 }

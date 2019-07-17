@@ -1,5 +1,11 @@
 # Next.js Template
 
+NextJs 模板
+
+- [x] Eslint + Stylelint + Prettier
+- [x] husky + lint-staged
+- [ ] scss(module) / styled-components
+
 ## Folder Structure
 
 ```
