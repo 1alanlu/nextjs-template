@@ -8,7 +8,13 @@ module.exports = {
     // 'property-no-vendor-prefix': null,
     'selector-max-id': null, // 限制選擇器中ID選擇器的數量
     'selector-max-compound-selectors': null, // 限制選擇器中復合選擇器的數量。
-    'selector-pseudo-class-no-unknown': null, // 禁止未知的偽類選擇器。
+    // 禁止未知的偽類選擇器。
+    'selector-pseudo-class-no-unknown': [
+      true,
+      {
+        ignorePseudoClasses: ':global,:local',
+      },
+    ],
     'selector-class-pattern': null, // 選擇器名稱 eg. .foo-BAR .imgBg
     'scss/dollar-variable-pattern': null, // Sass變量名稱
     'scss/at-mixin-pattern': null, // mixin名稱

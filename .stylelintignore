@@ -1,18 +1,28 @@
 node_modules/
+.git
 
-src/__tests__/__snapshots__
-src/.next
-src/build
-src/out
-
+# 舊的不需打包的樣式庫
+*.min.css
 src/assets/sass/base/_normalize.scss
 src/assets/sass/vendors/
 src/assets/sass/vendors-extensions
 
-.git
+# 其他型別檔案
 *.js
 *.jsx
 *.png
 *.eot
 *.ttf
 *.woff
+
+# 測試和打包目錄
+src/__tests__/__snapshots__
+src/.next
+src/build
+src/out
+
+# 通過反取忽略目錄
+/src/component/*
+!/src/component/CompA
+!/src/component/CompB
+# 這樣的效果是除 CompA 和 CompB 外其他目錄都會被忽略

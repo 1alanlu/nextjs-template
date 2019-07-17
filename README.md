@@ -2,7 +2,7 @@
 
 NextJs 模板
 
-- [x] Eslint + Stylelint + Prettier
+- [x] ESlint + StyleLint + Prettier
 - [x] husky + lint-staged
 - [ ] scss(module) / styled-components
 

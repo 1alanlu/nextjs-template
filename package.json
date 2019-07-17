@@ -3,7 +3,7 @@
   "scripts": {
     "lint:js": "cross-env NODE_ENV=development ./node_modules/.bin/eslint .",
     "lint:js:fix": "yarn lint:js --fix",
-    "lint:scss": "stylelint src/**/*.scss --syntax scss",
+    "lint:scss": "stylelint src/**/*.{css,sass,scss} --syntax scss",
     "lint:scss:fix": "yarn lint:scss --fix",
     "dev": "next src",
     "build": "next build src",
@@ -28,7 +28,7 @@
       "prettier --write",
       "git add"
     ],
-    "src/**/*.scss": [
+    "src/**/*.{css,sass,scss}": [
       "yarn lint:scss:fix",
       "git add"
     ]
