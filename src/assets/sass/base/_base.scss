@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  border-color: transparent;
+  outline: none;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  font-family: $fontFamily-main;
+  color: map-get($colors, bodyText);
+  background: map-get($colors, bodyBG);
+
+  * {
+    @include responsive-lineHeight(1.5em, 1.5em, 1.25em, 1.25em);
+    @include font-size(12px, 24px);
+  }
+}
+
+h1 {
+  @include font-size(32px, 44px);
+
+  font-weight: 800;
+}
+
+h2 {
+  @include font-size(28px, 40px);
+
+  font-weight: 700;
+}
+
+h3 {
+  @include font-size(24px, 36px);
+
+  font-weight: 600;
+}
+
+h4 {
+  @include font-size(20px, 32px);
+
+  font-weight: 500;
+}
+
+h5 {
+  @include font-size(16px, 28px);
+
+  font-weight: 400;
+}
+
+h6 {
+  @include font-size(12px, 24px);
+
+  font-weight: 300;
+}
+
+a {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    text-decoration: unset;
+  }
+}
+
+code {
+  @include font-size(11px, 13px, map-get($breakpoints, phone), map-get($breakpoints, tablet-small));
+
+  position: relative;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-family: monospace;
+  white-space: pre-wrap;
+  background: $color-dark;
+  border-radius: 0.2rem;
+
+  span {
+    color: #888;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

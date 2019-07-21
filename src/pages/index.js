@@ -1,10 +1,16 @@
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
+import styled from 'styled-components'
 import Layout from '@components/Layout'
+
+const Title = styled.h1`
+  font-size: 50px;
+  color: ${({ theme }) => theme.colors.primary};
+`
 
 const PostLink = ({ post }) => (
   <li>
-    <Link href="/p/[id]" as={`${process.env.FRONTEND_URL}/p/${post.id}`}>
+    <Link href="/p/[id]" as={`${process.env.LOCATION_PREFIX}/p/${post.id}`} prefetch={false}>
       <a>{post.name}</a>
     </Link>
     <style jsx>{`
@@ -26,11 +32,11 @@ const PostLink = ({ post }) => (
   </li>
 )
 
-const Index = props => (
+const Index = ({ shows }) => (
   <Layout>
-    <h1>Batman TV Shows</h1>
+    <Title>Batman TV Shows</Title>
     <ul>
-      {props.shows.map(show => (
+      {shows.map(show => (
         <PostLink key={show.id} post={show} />
       ))}
     </ul>
@@ -47,7 +53,7 @@ const Index = props => (
   </Layout>
 )
 
-Index.getInitialProps = async function() {
+Index.getInitialProps = async () => {
   const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
   const data = await res.json()
 

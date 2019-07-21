@@ -1,0 +1,41 @@
+@import '../helpers';
+
+// 模態框 (彈出對話方塊)
+.modal {
+  z-index: z(modal);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  background-color: rgba($color: $color-dark, $alpha: 0.5);
+}
+
+// 內容
+.content {
+  @extend %center-position;
+  @extend %center-flex;
+
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 20px 20px 10px;
+  min-width: 300px;
+  max-width: 90vw;
+  min-height: 200px;
+  max-height: 90vh;
+  background-color: $color-white;
+  border-radius: 5px;
+  flex-direction: column;
+}
+
+// 關閉鈕
+.closeBtn {
+  margin-top: 10px;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}

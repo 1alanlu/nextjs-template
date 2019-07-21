@@ -1,14 +1,11 @@
 import dynamic from 'next/dynamic'
-import Markdown from 'react-markdown'
 import Layout from '@components/Layout'
 import InfiniteScrollDemo from '@components/_demo/InfiniteScrollDemo'
 
 const DemoPageContent = () => {
   return (
-    <Layout>
+    <Layout title="Demo">
       <DynamicBlock />
-      <hr />
-      <MarkdownBlock />
       <hr />
       <InfiniteScrollBlock />
     </Layout>
@@ -23,6 +20,7 @@ const DynamicBlock = () => {
   const DynamicComponentWithNoSSR = dynamic(() => import('@components/_demo/CountContextReducerDemo'), {
     ssr: false,
   })
+
   return (
     <>
       <h1>DynamicComponent</h1>
@@ -37,47 +35,6 @@ const DynamicBlock = () => {
         DynamicComponentWithNoSSR:
         <DynamicComponentWithNoSSR />
       </div>
-    </>
-  )
-}
-
-const MarkdownBlock = () => {
-  return (
-    <>
-      <h1>Markdown</h1>
-      <div className="markdown">
-        <Markdown
-          source={`
-This is our blog post.
-Yes. We can have a [link](/link).
-And we can have a title as well.
-
-### This is a title
-
-And here's the content.
-    `}
-        />
-      </div>
-      <style jsx global>{`
-        .markdown {
-          font-family: 'Arial';
-        }
-
-        .markdown a {
-          text-decoration: none;
-          color: blue;
-        }
-
-        .markdown a:hover {
-          opacity: 0.6;
-        }
-
-        .markdown h3 {
-          margin: 0;
-          padding: 0;
-          text-transform: uppercase;
-        }
-      `}</style>
     </>
   )
 }

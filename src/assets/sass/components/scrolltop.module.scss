@@ -1,0 +1,57 @@
+@import '../helpers';
+
+// 置頂按鈕
+.scrolltop {
+  @extend %center-flex;
+  // @include responsive-width(40px, 35px, 30px, 30px);
+  // @include responsive-height(40px, 35px, 30px, 30px);
+
+  z-index: z(scrolltop);
+  position: fixed;
+  bottom: 7vh;
+  right: 3vw;
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+  color: map-get($colors, headerText);
+  background-color: map-get($colors, headerBG);
+  border: 2px solid map-get($colors, headerText);
+  border-radius: 50%;
+  opacity: 0.7;
+  visibility: visible;
+  transition-property: color, background-color, opacity, transform, visibility;
+  transition-duration: 0.4s;
+  // transform: scale(1, 1) rotate(0) translate(0, 0);
+  cursor: pointer;
+  user-select: none;
+
+  &.hide {
+    opacity: 0;
+    // transform: scale(0.5, 0.5) rotate(60deg) translate(6vh, -12vw);
+    // cursor: default;
+    visibility: hidden;
+  }
+
+  svg {
+    width: 60%;
+    height: 60%;
+
+    path {
+      color: map-get($colors, headerText);
+    }
+  }
+
+  &:hover,
+  &:active {
+    color: map-get($colors, headerBG);
+    background-color: map-get($colors, headerText);
+    border: 2px solid map-get($colors, headerBG);
+    opacity: 1;
+    transform: scale(1.1, 1.1);
+    // transform: scale(1.1, 1.1) rotate(0) translate(0, 0);
+
+    path {
+      color: map-get($colors, headerBG);
+    }
+  }
+}

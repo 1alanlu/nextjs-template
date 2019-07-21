@@ -1,5 +1,10 @@
-const next = require('next')
 const express = require('express')
+const next = require('next')
+
+// require('dotenv').config();
+
+console.log("server's NODE_ENV", process.env.NODE_ENV)
+console.log("server's PORT", process.env.PORT)
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const env = process.env.NODE_ENV
@@ -14,12 +19,23 @@ const nextApp = next({
   dir: './src', // base directory where everything is, could move to src later
   dev: env !== 'production',
 })
-
 const handle = nextApp.getRequestHandler()
 
 nextApp
   .prepare()
   .then(() => {
+    // 动态修改路径前缀，适合有 CDN 配置的静态资源部署：
+    /* const server = new http.Server((req, res) => {
+      // Add assetPrefix support based on the hostname
+      if (req.headers.host === 'my-app.com') {
+        app.setAssetPrefix('http://cdn.com/myapp')
+      } else {
+        app.setAssetPrefix('')
+      }
+
+      handleNextRequests(req, res)
+    }) */
+
     const server = express()
 
     // custom route for posts

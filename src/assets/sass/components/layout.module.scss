@@ -1,0 +1,144 @@
+@import '../helpers';
+
+// 固定背景
+.fixBG {
+  @include bg;
+
+  z-index: -100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $fixBG;
+
+  // 遮罩
+  // &::after {
+  //   @include pseudo();
+  //   top: 0;
+  //   left: 0;
+  //   width: 100vw;
+  //   height: 100vh;
+  //   background: $fixBGMask;
+  //   opacity: 0.7;
+  // }
+}
+
+// 最外層
+.app {
+  @extend %center-flex;
+
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+}
+
+// 容器
+.wrapper {
+  @include push--auto;
+
+  width: 100%;
+  max-width: $wrapper-max-width;
+}
+
+// 頁首, 頁尾
+.header,
+.footer {
+  @extend %center-flex;
+
+  width: 100%;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0.2em;
+  }
+}
+
+// 內容區塊
+.content {
+  @include responsive-paddingBottom(35px, 30px, 25px, 20px);
+
+  flex: 1;
+  width: 100%;
+
+  // .wrapper {
+  //   overflow: hidden;
+  //   padding: 1rem;
+  // }
+}
+
+// 頁首
+.header {
+  @include responsive-height(60px, 55px, 50px, 45px);
+
+  z-index: z(site-header);
+  position: fixed;
+  top: 0;
+  color: map-get($colors, headerText);
+  background: map-get($colors, headerBG);
+  opacity: 0.8;
+  transform: translateY(0);
+  transition-property: opacity, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.47, 1.04, 1, 1);
+
+  & + .content {
+    @include responsive-marginTop(60px, 55px, 50px, 45px);
+  }
+
+  &:hover,
+  &:active,
+  &.top {
+    opacity: 1;
+  }
+
+  &.hide {
+    transform: translateY(-100%);
+  }
+
+  .wrapper {
+    justify-content: space-between;
+  }
+
+  .main {
+    @extend %center-flex;
+
+    .logo {
+      @include responsive-ratio(1, 1);
+      @include bg($size: contain);
+
+      position: relative;
+      width: 40px;
+      background-image: url('../../../static/images/logo.png');
+      cursor: pointer;
+      transition: opacity 0.5s;
+
+      &:hover,
+      &:active {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+// 頁尾
+.footer {
+  z-index: z(site-footer);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: map-get($colors, footerText);
+  background: map-get($colors, footerBG);
+
+  .wrapper {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  b {
+    @include font-size(12px, 16px);
+
+    font-weight: bold;
+  }
+}

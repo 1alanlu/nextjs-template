@@ -1,24 +1,47 @@
-import Link from 'next/link'
+import { memo } from 'react'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
-const linkStyle = {
-  marginRight: 15,
+// 上下文
+import { useScrollYState, useScrollYDispatch } from '@context/scrollYContext'
+
+// 展示組件
+import Nav from '@components/container/Nav'
+import CustomLink from '@components/presentational/Link/CustomLink'
+
+// 資料
+import NavData from '@static/data/nav.json'
+
+// 頁首
+const Header = memo(({ styles }) => {
+  console.log('render Header')
+
+  // 卷軸相關變數
+  const scrollYState = useScrollYState()
+  const { headerRef } = useScrollYDispatch()
+
+  return (
+    <header
+      ref={headerRef}
+      className={classnames(styles.header, {
+        [styles.hide]: !scrollYState.isHeaderShow,
+        [styles.top]: scrollYState.isHeaderTop,
+      })}
+    >
+      <div className={styles.wrapper}>
+        <div className={styles.main}>
+          <CustomLink href="/">
+            <a title="Home" className={styles.logo} />
+          </CustomLink>
+        </div>
+        <Nav data={NavData} />
+      </div>
+    </header>
+  )
+})
+
+Header.propTypes = {
+  styles: PropTypes.object.isRequired,
 }
-
-const Header = () => (
-  <div>
-    <Link href="/" as={`${process.env.FRONTEND_URL}/`}>
-      <a style={linkStyle}>Home</a>
-    </Link>
-    <Link href="/about" as={`${process.env.FRONTEND_URL}/about`}>
-      <a style={linkStyle}>About</a>
-    </Link>
-    <Link href="/demo" as={`${process.env.FRONTEND_URL}/demo`}>
-      <a style={linkStyle}>Demo</a>
-    </Link>
-    <Link href="/test" as={`${process.env.FRONTEND_URL}/test`}>
-      <a style={linkStyle}>Test</a>
-    </Link>
-  </div>
-)
 
 export default Header

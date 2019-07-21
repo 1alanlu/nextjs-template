@@ -19,7 +19,7 @@ const Page = () => (
   </Layout>
 )
 
-Page.getInitialProps = function() {
+Page.getInitialProps = () => {
   return {}
 }
 

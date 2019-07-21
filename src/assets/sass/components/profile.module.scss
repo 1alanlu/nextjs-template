@@ -1,0 +1,109 @@
+@import '../helpers';
+
+// 個人簡介
+.profile {
+  @include push--auto;
+  @include responsive-padding(85px 20px 30px, 80px 15px 15px, 60px 10px 10px, 50px 5px 5px);
+
+  overflow: hidden;
+  width: 90%;
+  min-width: map_get($breakpoints, phone-small) -20px;
+  max-width: map_get($breakpoints, tablet-small);
+  // background-color: rgba(#f66, 0.3);
+
+  .wrapper {
+    @include push--auto;
+
+    max-width: map_get($breakpoints, phone-wide);
+    box-shadow: 3px 3px 5px rgba(map-get($colors, bodyBG), 0.3);
+    text-shadow: 3px 3px 3px rgba(map-get($colors, bodyBG), 0.2);
+  }
+}
+
+// 頭像
+.avatar {
+  @include push--auto;
+  @include bg;
+
+  position: relative;
+  // padding: 10px;
+  // background-color: $color-white;
+  // background-image: url('../../../static/images/background/bg.jpg');
+
+  .frame {
+    @include responsive-ratio(16, 9);
+
+    // overflow: hidden;
+
+    img {
+      @extend %rwd-img;
+
+      width: auto;
+      max-height: 150%;
+      transition-duration: 0.5s;
+    }
+  }
+
+  &:hover {
+    .frame img {
+      transform: translateY(-2.5%) scale(1.1);
+    }
+  }
+
+  // 外框
+  &::after,
+  &::before {
+    @include pseudo;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-style: solid;
+    border-color: $color-white;
+  }
+
+  &::before {
+    border-width: 0.5rem 0 0 0.5rem;
+  }
+
+  &::after {
+    border-width: 0 0.5rem 0.5rem 0;
+  }
+}
+
+// 介紹
+.info {
+  position: relative;
+  margin-top: -1px;
+  padding: 0.5rem 1rem 1rem;
+  text-align: center;
+  background-color: $color-white;
+
+  // 大名
+  h2 {
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  p {
+    margin: 10px;
+    text-align: justify;
+    text-justify: inter-ideograph;
+
+    // 第一個字
+    // &::first-letter {
+    //   font-size: 2em;
+    //   font-weight: bold;
+    //   color: $color-secondary;
+    // }
+
+    // 反白
+    // &::selection {
+    //   color: yellow;
+    //   background: #543;
+    // }
+  }
+}

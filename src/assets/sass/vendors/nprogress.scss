@@ -1,0 +1,73 @@
+/* Make clicks pass-through */
+@import "../helpers/variables";
+$color-main: map-get($colors, nprogress);
+
+#nprogress {
+  pointer-events: none;
+
+  .bar {
+    z-index: z(nprogress);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $color-main;
+  }
+
+  .peg {
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 100px;
+    height: 100%;
+    box-shadow: 0 0 10px $color-main, 0 0 5px $color-main;
+    opacity: 1;
+    transform: rotate(3deg) translate(0px, -4px);
+  }
+
+  .spinner {
+    z-index: z(nprogress);
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    display: block;
+  }
+
+  .spinner-icon {
+    width: 18px;
+    height: 18px;
+    border: solid 2px transparent;
+    border-top-color: $color-main;
+    border-left-color: $color-main;
+    border-radius: 50%;
+
+    animation: nprogress-spinner 400ms linear infinite;
+  }
+}
+
+/* Fancy blur effect */
+
+/* Remove these to get rid of the spinner */
+
+.nprogress-custom-parent {
+  position: relative;
+  overflow: hidden;
+
+  #nprogress {
+    .spinner,
+    .bar {
+      position: absolute;
+    }
+  }
+}
+
+@keyframes nprogress-spinner {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

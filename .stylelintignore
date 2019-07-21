@@ -5,7 +5,6 @@ node_modules/
 *.min.css
 src/assets/sass/base/_normalize.scss
 src/assets/sass/vendors/
-src/assets/sass/vendors-extensions
 
 # 其他型別檔案
 *.js
@@ -16,10 +15,10 @@ src/assets/sass/vendors-extensions
 *.woff
 
 # 測試和打包目錄
-src/__tests__/__snapshots__
 src/.next
 src/build
 src/out
+src/out/_next/static/webpack
 
 # 通過反取忽略目錄
 /src/component/*

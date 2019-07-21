@@ -1,0 +1,206 @@
+@import '../helpers';
+
+//導覽列高度
+$tabContainerHeight: 90px;
+
+// 主版面區塊
+.heroTabs {
+  @extend %center-flex;
+
+  position: relative;
+  justify-content: flex-start;
+  margin-bottom: $tabContainerHeight;
+  padding: 0 2em;
+  height: 100vh;
+  text-align: center;
+  background-color: rgba($color-quaternary, 0.5);
+  flex-direction: column;
+  user-select: none;
+
+  // 導覽列容器
+  .tabContainer {
+    z-index: z(scrolltop);
+    position: absolute;
+    bottom: -$tabContainerHeight;
+    display: flex;
+    width: 100%;
+    height: $tabContainerHeight;
+    background-color: $color-quaternary;
+    box-shadow: 0 0 20px rgba($color-dark, 0.1);
+    flex-direction: row;
+
+    // 線
+    &::before {
+      @include pseudo;
+
+      top: 20px - 5px/2;
+      // @include responsive-top(16px, 18px, 20px, 20px);
+      left: 10%;
+      width: 80%;
+      height: 5px;
+      // @include responsive-height(5px, 4px, 3px, 2px);
+      background-color: $color-primary;
+    }
+
+    // 導覽鈕
+    .tab {
+      @extend %center-flex;
+
+      position: relative;
+      margin-top: 30px;
+      flex: 1;
+
+      // &.target {
+      //   &::before {
+      //     background-color: $color-tertiary;
+      //     border: 1px solid $color-tertiary;
+      //     transform: translate(-50%, -50%) scale(1.5);
+      //   }
+      // }
+
+      // 圓點
+      &::before {
+        @include pseudo;
+
+        top: -10px;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        // @include responsive-width(10px, 8px, 6px, 5px);
+        // @include responsive-height(10px, 8px, 6px, 5px);
+        background-color: $color-primary;
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        transition-property: border, color, background-color;
+        transition-duration: 0.4s;
+      }
+
+      &:hover,
+      &:active {
+        &::before {
+          transform: translate(-50%, -50%) scale(1.5);
+        }
+      }
+    }
+
+    // 導覽滑動(圓點)
+    .tabSlider {
+      position: absolute;
+      top: 20px - 10px/2;
+      width: 10px;
+      height: 10px;
+      background-color: $color-secondary;
+      border: 1px solid $color-tertiary;
+      border-radius: 50%;
+      visibility: hidden;
+      transform: scale(1.5);
+      transition-property: left, visibility;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+    }
+
+    &.top {
+      position: fixed;
+      top: 0;
+
+      .tabSlider {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+// 主版面
+.hero {
+  @extend %center-flex;
+
+  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  width: 100%;
+  height: 92vh;
+  user-select: none;
+
+  @include mq(phablet, max) {
+    height: 95vh;
+  }
+
+  // 主版面卡片
+  > * {
+    position: relative;
+    overflow: hidden;
+    margin: 2.5px;
+    background-color: $color-white;
+    border: 5px solid $color-white;
+    cursor: pointer;
+
+    @include mq(phablet, max) {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        float: none;
+        width: 100%;
+        height: 50%;
+        flex: 1;
+      }
+    }
+
+    // 背景圖片
+    .bg {
+      @extend %center-position;
+      @include bg($color-primary);
+
+      width: 100%;
+      height: 100%;
+      @include mq(phablet, max) {
+        background-position-y: 60%;
+      }
+    }
+
+    // 遮罩
+    .mask {
+      @extend %center-flex;
+
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color-white, 0.7);
+      transition: bottom 0.4s ease-in-out;
+
+      p {
+        font-size: 36px;
+        font-weight: bold;
+      }
+    }
+
+    &:hover,
+    &:active {
+      .bg {
+        // filter: sepia(80%);
+        filter: blur(2px);
+      }
+
+      .mask {
+        bottom: 0;
+      }
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      width: 50%;
+      height: 50%;
+      flex: 1;
+    }
+
+    &:nth-child(3),
+    &:nth-child(4) {
+      float: right;
+      width: 25%;
+      height: 100%;
+    }
+  }
+}

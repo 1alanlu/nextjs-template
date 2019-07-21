@@ -1,0 +1,43 @@
+@import '../helpers';
+
+// 聯繫區塊
+.contact {
+  @extend %center-flex;
+
+  > * {
+    @extend %center-flex;
+    @include responsive-width(25px, 25px, 25px, 20px);
+    @include responsive-height(25px, 25px, 25px, 20px);
+
+    margin-left: 0.5rem;
+    color: map-get($colors, footerText);
+    background: map-get($colors, footerBG);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition-property: color, background-color;
+    transition-duration: 0.3s;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    svg {
+      width: 80%;
+      height: 80%;
+
+      path {
+        fill: map-get($colors, headerText);
+      }
+    }
+
+    &:hover,
+    &:active {
+      color: map-get($colors, footerBG);
+      background: map-get($colors, footerText);
+
+      path {
+        fill: map-get($colors, footerBG);
+      }
+    }
+  }
+}

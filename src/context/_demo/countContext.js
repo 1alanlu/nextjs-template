@@ -3,11 +3,11 @@ import React from 'react'
 const CountStateContext = React.createContext()
 const CountUpdaterContext = React.createContext()
 
-function CountProvider(props) {
+function CountProvider({ children }) {
   const [count, setCount] = React.useState(0)
   return (
     <CountStateContext.Provider value={count}>
-      <CountUpdaterContext.Provider value={setCount}>{props.children}</CountUpdaterContext.Provider>
+      <CountUpdaterContext.Provider value={setCount}>{children}</CountUpdaterContext.Provider>
     </CountStateContext.Provider>
   )
 }

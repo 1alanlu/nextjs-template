@@ -2,10 +2,10 @@
 node_modules/
 
 # production
-src/__tests__/__snapshots__
 src/.next
 src/build
 src/out
+src/out/_next/static/webpack
 
 .git
 *.log

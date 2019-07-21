@@ -1,0 +1,31 @@
+@import '../helpers';
+
+// 興趣區塊
+.hobbies {
+  // @include responsive-padding(50px, 40px, 30px, 20px);
+  @extend %center-flex;
+  @include push--auto;
+
+  justify-content: space-around;
+  // background-color: $color-white;
+  // box-shadow: 3px 3px 5px rgba(map-get($colors, headerText), 0.3);
+  // text-shadow: 3px 3px 3px rgba(map-get($colors, headerBG), 0.2);
+  overflow: hidden;
+  width: 90%;
+  min-width: map_get($breakpoints, phone-small) -20px;
+  max-width: map_get($breakpoints, desktop);
+  flex-wrap: wrap;
+  align-content: center;
+
+  & > * {
+    @include responsive-ratio(3, 1);
+
+    position: relative;
+    // padding-bottom: 50%;
+    flex: 1 0 33%;
+
+    // @include mq(phablet, max) {
+    //   flex: 0 1 100%;
+    // }
+  }
+}

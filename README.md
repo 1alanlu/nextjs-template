@@ -4,26 +4,30 @@ NextJs 模板
 
 - [x] ESlint + StyleLint + Prettier
 - [x] husky + lint-staged
-- [ ] scss(module) / styled-components
+- [x] scss(module) / styled-components
 
 ## Folder Structure
 
-```
+```bash
 .
 ├── .vscode/ (vscode 配置)
 │
-├── config/ (其他配置)
-│   ├── configForEslintImportResolver.js (別名 配置)
-│   └── next.runtimeConfig.js (*NextJS 執行期配置)
+├── config/ (配置)
+│   ├── runtime/ (執行期)
+│   │   ├── configForEslintImportResolver.js (別名 配置)
+│   │   └── next.runtimeConfig.js (*NextJS 執行期配置)
+│   ├── aos.config.js (動畫 配置)
+│   ├── seo.config.js (SEO 配置)
+│   └── [...]
 │
 ├── node_modules/ (安裝套件)
 │
 ├── server/ (服務端)
-│   ├── models/
-│   ├── routes/
 │   └── index.js
 │
 ├── src/
+│   │
+│   ├── api/ (API統一管理)
 │   │
 │   ├── assets/ (資源)
 │   │   │
@@ -40,7 +44,9 @@ NextJs 模板
 │   │   └── utils/ (工具庫)
 │   │       ├── common/ (通用工具)
 │   │       ├── hooks/ (Hooks工具)
-│   │       └── vendors/ (第三方工具)
+│   │       ├── vendors/ (第三方工具)
+│   │       ├── gtag.js (GA)
+│   │       └── [...]
 │   │
 │   ├── build/ (建置)
 │   │
@@ -48,17 +54,20 @@ NextJs 模板
 │   │   ├── _demo/ (示範組件)
 │   │   ├── container/ (容器組件)
 │   │   ├── presentational/ (展示組件)
-│   │   └── Layout.js (佈局)
+│   │   ├── Layout.js (佈局)
+│   │   └── [...]
 │   │
 │   ├── context/ (上下文)
 │   │
 │   ├── out/ (輸出)
 │   │
 │   ├── pages/ (頁面路由)
+│   │   ├── api/ (API路由)
 │   │   ├── _app.js
 │   │   ├── _document.js
 │   │   ├── _error.js
-│   │   └── index.js
+│   │   ├── index.js
+│   │   └── [...]
 │   │
 │   └── static/ (靜態資源)
 │       ├── data/ (json資料庫)

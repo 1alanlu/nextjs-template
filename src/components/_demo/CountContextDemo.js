@@ -1,6 +1,6 @@
 import React from 'react'
-import RenderCounter from '@utils/hooks/useRenderCounter'
 import { CountProvider, useCountState, useCountUpdater } from '@context/_demo/countContext'
+import RenderCounter from '@utils/hooks/useRenderCounter'
 
 const CountDisplay = React.memo(() => {
   // console.log('CountContextDemo-CountDisplay')

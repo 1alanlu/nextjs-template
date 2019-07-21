@@ -12,7 +12,7 @@ module.exports = {
     'selector-pseudo-class-no-unknown': [
       true,
       {
-        ignorePseudoClasses: ':global,:local',
+        ignorePseudoClasses: ['global', 'export', 'import', 'local'],
       },
     ],
     'selector-class-pattern': null, // 選擇器名稱 eg. .foo-BAR .imgBg
@@ -51,6 +51,7 @@ module.exports = {
       'height',
       'min-height',
       'max-height',
+      'line-height',
       'font-size',
       'font-family',
       'font-weight',
@@ -84,6 +85,10 @@ module.exports = {
       'border-left-width',
       'border-left-color',
       'border-radius',
+      'border-top-left-radius',
+      'border-top-right-radius',
+      'border-bottom-right-radius',
+      'border-bottom-left-radius',
       'opacity',
       'filter',
       'list-style',

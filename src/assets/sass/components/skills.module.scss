@@ -1,0 +1,27 @@
+@import '../helpers';
+
+// 技能區塊
+.skills {
+  @extend %center-flex;
+  // @include responsive-padding(50px, 40px, 30px, 20px);
+  @include push--auto;
+
+  justify-content: space-around;
+  overflow: hidden;
+  width: 90%;
+  min-width: map_get($breakpoints, phone-small) -20px;
+  max-width: map_get($breakpoints, desktop);
+  // background-color: $color-white;
+  // box-shadow: 3px 3px 5px rgba(map-get($colors, headerText), 0.3);
+  // text-shadow: 3px 3px 3px rgba(map-get($colors, headerBG), 0.2);
+  flex-wrap: wrap;
+  align-content: center;
+
+  & > * {
+    flex: 1;
+
+    // @include mq(phablet, max) {
+    //   flex: 0 1 50%;
+    // }
+  }
+}

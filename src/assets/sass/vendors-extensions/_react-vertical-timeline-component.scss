@@ -1,0 +1,331 @@
+@import '../helpers';
+
+$twoColumWidth: map_get($breakpoints, tablet-wide);
+
+.vertical-timeline.vertical-timeline--two-columns {
+  @media only screen and (min-width: $twoColumWidth) {
+    .vertical-timeline-element-content {
+      padding: 1em 1.5em;
+      width: 45%;
+    }
+  }
+}
+
+// 區塊圖示
+.vertical-timeline-element-icon {
+  color: $color-white;
+}
+
+// 區塊內容
+.vertical-timeline-element-content {
+  border-top: 3px solid transparent;
+
+  & > * {
+    margin-bottom: 0.5rem;
+  }
+
+  // 主標
+  .vertical-timeline-element-title {
+    margin-bottom: 0;
+    line-height: 1.5em;
+    color: darken(#652005, 0%);
+
+    > * {
+      vertical-align: middle;
+    }
+
+    span {
+      line-height: inherit;
+      font-size: inherit;
+    }
+
+    // logo
+    .logo {
+      display: inline-block;
+      margin-left: 5px;
+      height: 1.5em;
+
+      img {
+        height: 100%;
+        user-select: none;
+      }
+    }
+  }
+
+  // 副標
+  .vertical-timeline-element-subtitle {
+    font-weight: 600;
+    color: #563b02;
+  }
+
+  // 日期
+  .vertical-timeline-element-date {
+    margin-bottom: 0;
+    padding: 0;
+    color: $color-quaternary;
+  }
+
+  // 簡介區塊
+  .resumeProjectsBlock {
+    &-content {
+      font-weight: 600;
+
+      // 主題
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        position: relative;
+        padding-left: 10px;
+        color: #652005;
+
+        &::before {
+          @include pseudo;
+
+          top: 0.125em;
+          left: 0.1em;
+          width: 0.125em;
+          height: 1.2em;
+          border-radius: 0.125em;
+        }
+      }
+
+      // 列表
+      ul,
+      ol {
+        margin-top: 0.25rem;
+        margin-bottom: 0.5rem;
+        padding-left: 2rem;
+        font-size: 1rem;
+        color: lighten(#563b02, 0);
+        // list-style-image:url('upload/20150909194640.png');
+      }
+
+      ul li {
+        list-style: circle;
+      }
+
+      ol li {
+        list-style: decimal;
+      }
+
+      // iframe
+      .iframe {
+        position: relative;
+        margin-bottom: 10px;
+        padding-top: 56%;
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    // 相簿區塊
+    &-photos {
+      @extend %center-flex;
+
+      flex-direction: column;
+
+      .photo {
+        @include responsive-ratio(16, 9);
+
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 5px;
+        width: 100%;
+        flex: 1;
+
+        img {
+          @extend %rwd-img;
+        }
+      }
+    }
+
+    // 技術區塊
+    &-technologies {
+      @extend %blocks;
+
+      margin-top: 10px;
+
+      div {
+        @include responsive-height(32px, 28px, 24px, 20px);
+
+        margin-right: 5px;
+        padding: 0;
+        // font-size: 0.8125rem;
+        background-color: $color-quaternary;
+        border: 0;
+        border-radius: 0.5em;
+
+        & > * {
+          @include responsive-padding(0 15px, 0 15px, 0 8px, 0 4px);
+        }
+      }
+    }
+
+    // 標籤
+    &-tags {
+      @extend %blocks;
+
+      margin-top: 10px;
+
+      div {
+        position: relative;
+        display: inline-block;
+        margin-left: 24px;
+        padding: 2px 5px;
+        line-height: 1;
+        text-decoration: none;
+        color: #fff;
+        background: $color-secondary;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        transition: 0.2s;
+
+        &::before {
+          @include pseudo;
+
+          top: 0;
+          right: 100%;
+          height: 100%;
+          transition: 0.2s;
+          border-top: 8px solid #0000;
+          border-right: 14px solid $color-secondary;
+          border-bottom: 8px solid #0000;
+        }
+
+        &::after {
+          @include pseudo;
+
+          top: calc(50% - 3.5px);
+          left: -7px;
+          width: 7px;
+          height: 7px;
+          background: $color-white;
+          border-radius: 50%;
+        }
+
+        &:hover,
+        &:active {
+          color: $color-white;
+          background: map-get($colors, 'bodyBG');
+          transform: scale(1.1);
+
+          &::before {
+            border-right-color: map-get($colors, 'bodyBG');
+          }
+        }
+      }
+    }
+
+    // 連結區塊
+    &-links {
+      @extend %blocks;
+
+      margin-top: 0.5em;
+
+      a {
+        @include responsive-padding(8px 16px, 8px 16px, 4px 8px, 2px 4px);
+        @include responsive-height(36px, 32px, 28px, 24px);
+
+        margin-right: 0.5em;
+        min-width: 3rem;
+        // font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        border: 1px solid rgba($color-black, 0.23);
+        border-radius: 0.5em;
+      }
+    }
+  }
+}
+
+@mixin themeStyle($color) {
+  .vertical-timeline-element-icon {
+    background-color: $color;
+  }
+
+  .vertical-timeline-element-content {
+    background-color: $color;
+    border-top-color: $color;
+
+    &::before {
+      border-right-color: $color;
+    }
+  }
+
+  .resumeProjectsBlock {
+    &-content {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        background-color: rgba($color, 0.1);
+
+        &::before {
+          background-color: $color;
+        }
+      }
+    }
+
+    &-technologies div {
+      color: $color;
+    }
+    // &-tags {
+    //   div {
+    //     &:hover,
+    //     &:active {
+    //       background: $color;
+    //       &::before {
+    //         border-right-color: $color;
+    //       }
+    //     }
+    //   }
+    // }
+  }
+
+  @media only screen and (min-width: $twoColumWidth) {
+    .vertical-timeline--two-columns & .vertical-timeline-element-content::before,
+    .vertical-timeline.vertical-timeline--two-columns & .vertical-timeline-element-content::before {
+      border-right-color: transparent;
+      border-left-color: $color;
+    }
+
+    .vertical-timeline--two-columns &.vertical-timeline-element--right .vertical-timeline-element-content::before,
+    .vertical-timeline--two-columns
+    &:nth-child(even):not(.vertical-timeline-element--left)
+    .vertical-timeline-element-content::before {
+      border-right-color: $color;
+    }
+  }
+}
+
+.vertical-timeline-element {
+  // 主題
+  &--work {
+    @include themeStyle(map-get($color-vtl, work));
+  }
+
+  &--education {
+    @include themeStyle(map-get($color-vtl, education));
+  }
+
+  &--portfolio {
+    @include themeStyle(map-get($color-vtl, portfolio));
+  }
+
+  &--start {
+    .vertical-timeline-element-icon {
+      background-color: map-get($color-vtl, start);
+    }
+  }
+}

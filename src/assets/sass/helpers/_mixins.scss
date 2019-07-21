@@ -1,0 +1,209 @@
+@import 'mixins/rwd';
+
+// ==============================
+// Font size mixin
+// ==============================
+@mixin font-size($min, $max: null, $lock-min: $font-lock-min, $lock-max: $font-lock-max) {
+  & {
+    font-size: $min;
+  }
+
+  @if $max {
+    @media (min-width: $lock-min) and (max-width: $lock-max) {
+      & {
+        font-size: calc(#{$min} + #{num($max) - num($min)} * (100vw - #{$lock-min}) / #{num($lock-max) - num($lock-min)});
+      }
+    }
+
+    @media (min-width: $lock-max) {
+      & {
+        font-size: $max;
+      }
+    }
+  }
+}
+
+// Push auto
+// 快速居中一個塊元素，而不必擔心是否已經應用了頂部或底部邊距。
+@mixin push--auto {
+  margin: {
+    right: auto;
+    left: auto;
+  }
+}
+
+// Pseudo
+// 使用時::before，::after你總是需要這三個，所以我們每次使用時都會保存兩行代碼。
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  position: $pos;
+  display: $display;
+  content: $content;
+}
+
+// Responsive ratio
+// 我們使用它來創建維持比率的可伸縮元素（通常是圖像/背景圖像）
+// @include responsive-ratio(16,9);
+@mixin responsive-ratio($x, $y, $pseudo: false) {
+  $padding: unquote(($y / $x) * 100 + '%');
+
+  @if $pseudo {
+    &::before {
+      @include pseudo($pos: relative);
+
+      padding-top: $padding;
+      width: 100%;
+    }
+  } @else {
+    padding-top: $padding;
+  }
+}
+
+// 三角形
+// 這個mixin可以解決你從大多數傳統工具提示中看到的那個三角形所帶來的麻煩，
+// 所有這些都沒有圖像，你只需指定它的顏色，你想要它有多大，它將從你的元素中產生的方向和你'重做！
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false) {
+  @include pseudo($pos: $position);
+
+  width: 0;
+  height: 0;
+
+  @if $round {
+    border-radius: 3px;
+  }
+
+  @if $direction==down {
+    margin-top: 0 - round($size / 2.5);
+    border: $size solid transparent;
+    border-top: $size solid $color;
+  } @else if $direction==up {
+    margin-bottom: 0 - round($size / 2.5);
+    border: $size solid transparent;
+    border-bottom: $size solid $color;
+  } @else if $direction==right {
+    margin-right: -$size;
+    border: $size solid transparent;
+    border-left: $size solid $color;
+    // left: 100%;
+    // right: auto;
+  } @else if $direction==left {
+    margin-left: -$size;
+    border: $size solid transparent;
+    border-right: $size solid $color;
+    // right: 100%;
+    // left: auto;
+  }
+}
+
+// Font styles
+//為字體設置樣式帶來痛苦。（這假定您已經包含了字體），設置一次您的後備字體，您再也不用擔心了。
+@mixin font($size: false, $colour: false, $weight: false, $lh: false) {
+  @if $size {
+    font-size: $size;
+  }
+
+  @if $colour {
+    color: $colour;
+  }
+
+  @if $weight {
+    font-weight: $weight;
+  }
+
+  @if $lh {
+    line-height: $lh;
+  }
+}
+
+@mixin bg($color: false, $size: cover, $position: center, $repeat: no-repeat) {
+  @if $color {
+    background-color: $color;
+  }
+
+  @if $size {
+    background-size: $size;
+  }
+
+  @if $position {
+    background-position: $position;
+  }
+
+  @if $repeat {
+    background-repeat: $repeat;
+  }
+}
+
+// Hardware
+// 當您需要為某些動畫觸發硬件加速時，簡單有效，保持一切快速，光滑和無閃爍。
+@mixin hardware($backface: true, $perspective: 1000px) {
+  @if $backface {
+    backface-visibility: hidden;
+  }
+
+  perspective: $perspective;
+}
+
+// Truncate
+// 將截斷添加到元素並不像應該的那樣簡單，儘管它具有這個方便的節省時間，
+// 這意味著當你包含mixin時，你只需要指定具有最大寬度值的邊界，快樂的日子！
+@mixin truncate($truncation-boundary) {
+  overflow: hidden;
+  max-width: $truncation-boundary;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// ==============================
+// Other
+// ==============================
+
+// 水平垂直置中
+%center-flex {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 絕對定位置中
+%center-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 響應式圖片
+%rwd-img {
+  position: absolute;
+  top: -100%;
+  bottom: -100%;
+  right: -100%;
+  left: -100%;
+  margin: auto;
+  width: 100%;
+  height: auto;
+
+  &:global(.landscape) {
+    width: auto;
+    height: 100%;
+  }
+}
+
+// 小區塊
+%blocks {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+
+  & > * {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    text-decoration: none;
+    white-space: nowrap;
+    outline: none;
+    user-select: none;
+  }
+}
