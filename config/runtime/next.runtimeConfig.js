@@ -70,7 +70,7 @@ const exportPathMapRuntimeConfig = async () => {
   return Object.assign(
     /* {}, pages, */ {
       '/': { page: '/' },
-      '/about': { page: 'about' },
+      '/resume': { page: 'resume' },
       '/demo': { page: '/demo' },
       '/test': { page: '/test' },
     }
