@@ -136,11 +136,11 @@ $twoColumWidth: map_get($breakpoints, tablet-wide);
       .photo {
         @include responsive-ratio(16, 9);
 
+        flex: 1;
         position: relative;
         overflow: hidden;
         margin-bottom: 5px;
         width: 100%;
-        flex: 1;
 
         img {
           @extend %rwd-img;

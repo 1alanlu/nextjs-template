@@ -19,10 +19,9 @@
 
   & > * {
     @include responsive-ratio(3, 1);
-
-    position: relative;
     // padding-bottom: 50%;
     flex: 1 0 33%;
+    position: relative;
 
     // @include mq(phablet, max) {
     //   flex: 0 1 100%;
