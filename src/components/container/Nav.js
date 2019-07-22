@@ -18,7 +18,7 @@ const Nav = memo(
         <ul>
           {data.map(item => (
             <li key={item.href} className={classnames({ [styles.active]: router.pathname === item.href })}>
-              <CustomLink href={item.href}>
+              <CustomLink href={item.href} prefetch={false}>
                 <a title={item.display}>{item.display}</a>
               </CustomLink>
             </li>
