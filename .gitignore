@@ -4,7 +4,7 @@ node_modules/
 # production
 src/.next
 src/build
-src/out
+
 src/out/_next/static/webpack
 
 .git
