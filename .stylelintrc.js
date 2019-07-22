@@ -22,6 +22,7 @@ module.exports = {
     'order/properties-alphabetical-order': null, // 依字母順序
     'order/properties-order': [
       'z-index',
+      'flex',
       'position',
       'top',
       'bottom',

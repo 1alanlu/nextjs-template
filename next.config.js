@@ -163,7 +163,7 @@ module.exports = withPlugins(
         // imagesPublicPath: `/_next/static/images/`,
         // imagesOutputPath: `static/images/`,
         imagesName: '[name]-[hash].[ext]',
-        handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif'],
+        handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif', 'ico'],
         optimizeImages: true,
         optimizeImagesInDev: false,
         mozjpeg: {

@@ -46,9 +46,9 @@ $tabContainerHeight: 90px;
     .tab {
       @extend %center-flex;
 
+      flex: 1;
       position: relative;
       margin-top: 30px;
-      flex: 1;
 
       // &.target {
       //   &::before {
@@ -135,18 +135,6 @@ $tabContainerHeight: 90px;
     border: 5px solid $color-white;
     cursor: pointer;
 
-    @include mq(phablet, max) {
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(3),
-      &:nth-child(4) {
-        float: none;
-        width: 100%;
-        height: 50%;
-        flex: 1;
-      }
-    }
-
     // 背景圖片
     .bg {
       @extend %center-position;
@@ -191,9 +179,11 @@ $tabContainerHeight: 90px;
 
     &:nth-child(1),
     &:nth-child(2) {
-      width: 50%;
-      height: 50%;
       flex: 1;
+      width: 50%;
+      @include mq(phablet, max) {
+        width: 100%;
+      }
     }
 
     &:nth-child(3),
@@ -201,6 +191,11 @@ $tabContainerHeight: 90px;
       float: right;
       width: 25%;
       height: 100%;
+      @include mq(phablet, max) {
+        flex: 1;
+        float: none;
+        width: 100%;
+      }
     }
   }
 }
