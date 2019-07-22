@@ -14241,11 +14241,14 @@ function (_App) {
       var _this$props = this.props,
           Component = _this$props.Component,
           pageProps = _this$props.pageProps,
-          router = _this$props.router;
+          router = _this$props.router; // update url
+
+      _config_seo_config__WEBPACK_IMPORTED_MODULE_13__["default"].openGraph.url = "https://localhost:3000" + router.pathname;
+      _config_seo_config__WEBPACK_IMPORTED_MODULE_13__["default"].canonical = "https://localhost:3000" + router.pathname;
       return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_8___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 100
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("meta", {
@@ -14254,17 +14257,13 @@ function (_App) {
         key: "meta_viewport",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 101
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_seo__WEBPACK_IMPORTED_MODULE_10__["DefaultSeo"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _config_seo_config__WEBPACK_IMPORTED_MODULE_13__["default"], {
-        canonical: "https://localhost:3000" + router.pathname,
-        openGraph: {
-          url: "https://localhost:3000" + router.pathname
-        },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103
+          lineNumber: 107
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_seo__WEBPACK_IMPORTED_MODULE_10__["LogoJsonLd"], {

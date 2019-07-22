@@ -28952,6 +28952,7 @@ var Nav = Object(react__WEBPACK_IMPORTED_MODULE_1__["memo"])(Object(next_router_
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_presentational_Link_CustomLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
       href: item.href,
+      prefetch: false,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 21
@@ -29659,7 +29660,7 @@ module.exports = JSON.parse("[{\"href\":\"/\",\"display\":\"首頁\"},{\"href\":
 
 /***/ }),
 
-/***/ 9:
+/***/ 19:
 /*!**************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fdemo&absolutePagePath=E%3A%5CCode%5CGIT%5Czyl%5Cnextjs-template%5Csrc%5Cpages%5Cdemo.js ***!
   \**************************************************************************************************************************************/
@@ -29682,5 +29683,5 @@ module.exports = dll_fbfdd5333204b8b31297;
 
 /***/ })
 
-},[[9,"static/runtime/webpack.js","styles"]]]);
+},[[19,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=demo.js.map

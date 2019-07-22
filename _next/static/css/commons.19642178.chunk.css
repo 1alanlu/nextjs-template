@@ -417,7 +417,7 @@ code {
   justify-content: center; }
 
 .scrolltop-module_scrolltop_3owof {
-  z-index: 4;
+  z-index: 2;
   position: fixed;
   bottom: 7vh;
   right: 3vw;
@@ -1157,7 +1157,7 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos], [data-aos][data-aos][data-
       padding-bottom: 20px; } }
 
 .layout-module_header_3O8Ss {
-  z-index: 3;
+  z-index: 4;
   position: fixed;
   top: 0;
   color: #ffd99f;
@@ -1217,7 +1217,7 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos], [data-aos][data-aos][data-
       opacity: 0.8; }
 
 .layout-module_footer_Tq1Qr {
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   bottom: 0;
   left: 0;

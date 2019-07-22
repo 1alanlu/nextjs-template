@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["styles"],{
+webpackHotUpdate("styles",{
 
 /***/ "./assets/sass/components/block.module.scss":
 /*!**************************************************!*\
@@ -30,7 +30,7 @@ module.exports = {"block":"block-module_block_3Wnej","title":"block-module_title
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823157397");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563823151699");
           });
       }
     }
@@ -68,7 +68,7 @@ module.exports = {"card":"card-module_card_1dc2P","imgBx":"card-module_imgBx_17t
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823157510");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563823151809");
           });
       }
     }
@@ -106,7 +106,7 @@ module.exports = {"singleChart":"circularChart-module_singleChart_3DzQs","text":
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823157573");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563823151875");
           });
       }
     }
@@ -144,7 +144,7 @@ module.exports = {"contact":"contact-module_contact_3b6jw"};;
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823157585");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563823151886");
           });
       }
     }
@@ -182,7 +182,7 @@ module.exports = {"heroTabs":"hero-module_heroTabs_CxI5e","tabContainer":"hero-m
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823157350");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563823151653");
           });
       }
     }
@@ -220,7 +220,7 @@ module.exports = {"hobbies":"hobbies-module_hobbies_3edhL"};;
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823157446");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563823151751");
           });
       }
     }
@@ -258,7 +258,7 @@ module.exports = {"app":"layout-module_app_1BB__","header":"layout-module_header
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823157381");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563823151685");
           });
       }
     }
@@ -296,7 +296,7 @@ module.exports = {"nav":"nav-module_nav_3zzK2","active":"nav-module_active_OSpnG
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823157549");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563823151848");
           });
       }
     }
@@ -334,7 +334,7 @@ module.exports = {"avatar":"profile-module_avatar_cD41p","frame":"profile-module
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823157431");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563823151714");
           });
       }
     }
@@ -372,7 +372,7 @@ module.exports = {"scrolltop":"scrolltop-module_scrolltop_3owof","hide":"scrollt
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823157490");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563823151787");
           });
       }
     }
@@ -410,7 +410,7 @@ module.exports = {"skills":"skills-module_skills_lSEgR"};;
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823157451");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563823151746");
           });
       }
     }
@@ -447,7 +447,7 @@ module.exports = {"skills":"skills-module_skills_lSEgR"};;
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823157411");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563823151729");
           });
       }
     }
@@ -484,44 +484,7 @@ module.exports = {"skills":"skills-module_skills_lSEgR"};;
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823157527");
-          });
-      }
-    }
-  
-
-/***/ }),
-
-/***/ "./assets/sass/vendors/aos/aos.scss":
-/*!******************************************!*\
-  !*** ./assets/sass/vendors/aos/aos.scss ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin;
-    if (true) {
-      var injectCss = function injectCss(prev, href) {
-        var link = prev.cloneNode();
-        link.href = href;
-        link.onload = function() {
-          prev.parentNode.removeChild(prev);
-        };
-        prev.stale = true;
-        prev.parentNode.insertBefore(link, prev);
-      };
-      module.hot.dispose(function() {
-        window.__webpack_reload_css__ = true;
-      });
-      if (window.__webpack_reload_css__) {
-        module.hot.__webpack_reload_css__ = false;
-        console.log("[HMR] Reloading stylesheets...");
-        var prefix = document.location.protocol + '//' + document.location.host;
-        document
-          .querySelectorAll("link[href][rel=stylesheet]")
-          .forEach(function(link) {
-            if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823002703");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563823151831");
           });
       }
     }
@@ -558,7 +521,7 @@ module.exports = {"skills":"skills-module_skills_lSEgR"};;
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823157472");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563823151768");
           });
       }
     }
@@ -566,5 +529,5 @@ module.exports = {"skills":"skills-module_skills_lSEgR"};;
 
 /***/ })
 
-}]);
-//# sourceMappingURL=styles.js.map
+})
+//# sourceMappingURL=styles.6e0803c57b8b16e812aa.hot-update.js.map

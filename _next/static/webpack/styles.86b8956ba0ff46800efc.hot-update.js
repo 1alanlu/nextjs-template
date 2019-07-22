@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["styles"],{
+webpackHotUpdate("styles",{
 
 /***/ "./assets/sass/components/block.module.scss":
 /*!**************************************************!*\
@@ -492,43 +492,6 @@ module.exports = {"skills":"skills-module_skills_lSEgR"};;
 
 /***/ }),
 
-/***/ "./assets/sass/vendors/aos/aos.scss":
-/*!******************************************!*\
-  !*** ./assets/sass/vendors/aos/aos.scss ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin;
-    if (true) {
-      var injectCss = function injectCss(prev, href) {
-        var link = prev.cloneNode();
-        link.href = href;
-        link.onload = function() {
-          prev.parentNode.removeChild(prev);
-        };
-        prev.stale = true;
-        prev.parentNode.insertBefore(link, prev);
-      };
-      module.hot.dispose(function() {
-        window.__webpack_reload_css__ = true;
-      });
-      if (window.__webpack_reload_css__) {
-        module.hot.__webpack_reload_css__ = false;
-        console.log("[HMR] Reloading stylesheets...");
-        var prefix = document.location.protocol + '//' + document.location.host;
-        document
-          .querySelectorAll("link[href][rel=stylesheet]")
-          .forEach(function(link) {
-            if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563823002703");
-          });
-      }
-    }
-  
-
-/***/ }),
-
 /***/ "./assets/sass/vendors/react-vertical-timeline-component.scss":
 /*!********************************************************************!*\
   !*** ./assets/sass/vendors/react-vertical-timeline-component.scss ***!
@@ -566,5 +529,5 @@ module.exports = {"skills":"skills-module_skills_lSEgR"};;
 
 /***/ })
 
-}]);
-//# sourceMappingURL=styles.js.map
+})
+//# sourceMappingURL=styles.86b8956ba0ff46800efc.hot-update.js.map
