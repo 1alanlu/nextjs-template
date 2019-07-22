@@ -23,8 +23,8 @@
     "qq": "yarn build && yarn export",
     "deploy:setup": "git branch gh-pages",
     "deploy:check": "git checkout --orphan gh-pages && git reset --hard && git commit --allow-empty -m \"Init\" & git checkout master",
-    "deploy:pre": "rimraf src/out && git worktree remove src/out && git worktree add src/out gh-pages",
-    "deploy": "copy .nojekyll src/out && cd src/out && git add --all && git commit -m \"Deploy Next.js to gh-pages\" && git push origin gh-pages && cd ../.."
+    "deploy:pre": "rimraf src/dist && git worktree add src/dist gh-pages",
+    "deploy": "copy .nojekyll src/dist && cd src && xcopy out dist /s /e /y && cd dist && git add --all && git commit -m \"Deploy Next.js to gh-pages\" && git push origin gh-pages && cd ../.."
   },
   "husky": {
     "hooks": {

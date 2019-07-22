@@ -5,6 +5,7 @@ node_modules/
 src/assets/sass
 src/.next
 src/build
+src/dist
 src/out
 src/out/_next/static/webpack
 src/static
