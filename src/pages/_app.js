@@ -8,7 +8,7 @@ Next.js 使用該App 組件初始化頁面。您可以覆蓋它並控制頁面�
 import React from 'react'
 import App, { Container } from 'next/app'
 import Head from 'next/head'
-import Router from 'next/router'
+import Router, { withRouter } from 'next/router'
 import { DefaultSeo, LogoJsonLd } from 'next-seo'
 import NProgress from 'nprogress'
 import { ThemeProvider } from 'styled-components'
@@ -89,7 +89,7 @@ class MyApp extends App {
   render() {
     console.log('render MyApp')
 
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, router } = this.props
 
     return (
       <>
@@ -102,8 +102,8 @@ class MyApp extends App {
         </Head>
         <DefaultSeo
           {...SEO}
-          canonical={process.env.SITE_URL + Router.pathname}
-          openGraph={{ url: process.env.SITE_URL + Router.pathname }}
+          canonical={process.env.SITE_URL + router.pathname}
+          openGraph={{ url: process.env.SITE_URL + router.pathname }}
         />
         <LogoJsonLd logo={`${process.env.SITE_URL}/static/images/logo.png`} url={process.env.SITE_URL} />
         <Container>
@@ -116,4 +116,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp
+export default withRouter(MyApp)
