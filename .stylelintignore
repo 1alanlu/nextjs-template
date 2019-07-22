@@ -17,8 +17,9 @@ src/assets/sass/vendors/
 # 測試和打包目錄
 src/.next
 src/build
+src/dist
 src/out
-src/out/_next/static/webpack
+src/static
 
 # 通過反取忽略目錄
 /src/component/*

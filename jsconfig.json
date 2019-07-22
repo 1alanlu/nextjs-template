@@ -15,5 +15,5 @@
     }
   },
   "include": ["config", "src"],
-  "exclude": ["node_modules", "dist", "src/.next", "src/build", "src/out"]
+  "exclude": ["node_modules", "dist", "src/.next", "src/build", "src/dist", "src/out"]
 }
