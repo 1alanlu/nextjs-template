@@ -33,7 +33,7 @@ const LayoutRoot = props => (
   </ScrollYProvider>
 )
 
-const Layout = ({ children, jsSrcArr, title, desc }) => {
+const Layout = ({ children, jsSrcArr, title, desc: description }) => {
   // 卷軸相關變數
   const scrollYState = useScrollYState()
   // 設置捲軸相關變數
@@ -59,9 +59,6 @@ const Layout = ({ children, jsSrcArr, title, desc }) => {
     AOS.init(aosConfig)
   }, [])
 
-  const mainTitle = `${process.env.SITE_NAME} - ${title}`
-  const mainDescription = desc
-
   const header = useMemo(() => <Header styles={styles} />, [])
   const footer = useMemo(() => <Footer styles={styles} />, [])
   const scrollTop = useMemo(() => <ScrollTop isShow={scrollYState.isScrollTopShow} />, [scrollYState.isScrollTopShow])
@@ -69,7 +66,6 @@ const Layout = ({ children, jsSrcArr, title, desc }) => {
   return (
     <>
       <Head>
-        <title>{mainTitle}</title>
         {jsSrcArr.map((jsSrc, index) => (
           <script src={jsSrc} key={`js${index}`} />
         ))}
@@ -80,12 +76,22 @@ const Layout = ({ children, jsSrcArr, title, desc }) => {
         </Script> */}
       </Head>
       <NextSeo
-        config={{
-          openGraph: {
-            title: mainTitle,
-            description: mainDescription,
-          },
+        title={title}
+        description={description}
+        openGraph={{
+          title,
+          description,
         }}
+        additionalMetaTags={[
+          {
+            property: 'dc.creator',
+            content: 'Zyl',
+          },
+          {
+            name: 'application-name',
+            content: 'NextSeo',
+          },
+        ]}
       />
       <div className={styles.fixBG} />
       <div className={styles.app}>

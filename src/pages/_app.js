@@ -9,7 +9,7 @@ import React from 'react'
 import App, { Container } from 'next/app'
 import Head from 'next/head'
 import Router from 'next/router'
-import { NextSeo } from 'next-seo'
+import { DefaultSeo, LogoJsonLd } from 'next-seo'
 import NProgress from 'nprogress'
 import { ThemeProvider } from 'styled-components'
 
@@ -100,8 +100,12 @@ class MyApp extends App {
             key="meta_viewport"
           />
         </Head>
-        {/* Here we call NextSeo and pass our default configuration to it  */}
-        <NextSeo config={SEO} />
+        <DefaultSeo
+          {...SEO}
+          canonical={process.env.SITE_URL + Router.pathname}
+          openGraph={{ url: process.env.SITE_URL + Router.pathname }}
+        />
+        <LogoJsonLd logo={`${process.env.SITE_URL}/static/images/logo.png`} url={process.env.SITE_URL} />
         <Container>
           <ThemeProvider theme={theme}>
             <Component {...pageProps} />

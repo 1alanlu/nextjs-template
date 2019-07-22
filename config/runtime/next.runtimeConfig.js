@@ -6,6 +6,7 @@ const fs = require('fs')
 
 const isProd = process.env.NODE_ENV === 'production'
 const port = parseInt(process.env.PORT, 10) || 3000
+
 console.log('=== next.config.js ENV ===')
 console.log('VERSION', process.env.VERSION)
 console.log('NODE_ENV', process.env.NODE_ENV)
@@ -26,9 +27,11 @@ const publicRuntimeConfig = {
 
 // 構建時配置 允許您process.env.xxx 在代碼中使用
 const envRuntimeConfig = {
-  SITE_URL: isProd ? `https://zhongyoulu.github.io/${publicRuntimeConfig.repoName}` : `https://localhost:${port}`,
-  LOCATION_PREFIX: isProd ? `/${publicRuntimeConfig.repoName}` : '',
   STATIC_FOLDER: publicRuntimeConfig.staticFolder,
+  LOCATION_PREFIX: isProd ? `/${publicRuntimeConfig.repoName}` : '',
+  SITE_URL: isProd ? `https://zhongyoulu.github.io/${publicRuntimeConfig.repoName}` : `https://localhost:${port}`,
+  SITE_NAME: `NextJs Template`,
+  PROFILE_NAME: `Zyl`,
   GA_TRACKING_ID: '',
   TRIGGER_OFFSET: 60,
   TAB_CONTAINER_HEIGHT: 60,
