@@ -91,7 +91,9 @@ class MyApp extends App {
 
     const { Component, pageProps, router } = this.props
 
+    // update url
     SEO.openGraph.url = process.env.SITE_URL + router.pathname
+    SEO.canonical = process.env.SITE_URL + router.pathname
 
     return (
       <>
@@ -102,7 +104,7 @@ class MyApp extends App {
             key="meta_viewport"
           />
         </Head>
-        <DefaultSeo {...SEO} canonical={process.env.SITE_URL + router.pathname} />
+        <DefaultSeo {...SEO} />
         <LogoJsonLd logo={`${process.env.SITE_URL}/static/images/logo.png`} url={process.env.SITE_URL} />
         <Container>
           <ThemeProvider theme={theme}>
