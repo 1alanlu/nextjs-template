@@ -23,8 +23,8 @@
     "qq": "yarn build && yarn export",
     "deploy:setup": "git branch gh-pages",
     "deploy:check": "git checkout --orphan gh-pages && git reset --hard && git commit --allow-empty -m \"Init\" & git checkout master",
-    "deploy:pre": "rmdir /s /q \"src/out\" && git worktree add src/out gh-pages",
-    "deploy": "git add src/out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix src/out origin gh-pages"
+    "deploy:pre": "rimraf src/out && git worktree add src/out gh-pages",
+    "deploy": "cd src/out && git add --all && git commit -m \"Deploy Next.js to gh-pages\" && git push origin gh-pages && cd ../.."
   },
   "husky": {
     "hooks": {
@@ -98,6 +98,7 @@
     "husky": "^3.0.1",
     "lint-staged": "^9.2.0",
     "prettier": "^1.18.2",
+    "rimraf": "^2.6.3",
     "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0",
     "stylelint-config-sass-guidelines": "^6.0.0",
