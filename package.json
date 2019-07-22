@@ -21,7 +21,7 @@
     "server:prod": "cross-env NODE_ENV=production node server/index.js",
     "precommit": "lint-staged",
     "qq": "yarn build && yarn export",
-    "deploy": "git add src/out/ && git commit -m \"Deploy Next.js to gh-pages\"  && git subtree push --rebase --prefix src/out origin gh-pages"
+    "deploy": "git add src/out/ && git commit -m \"Deploy Next.js to gh-pages\"  && git subtree push -f --prefix src/out origin gh-pages"
   },
   "husky": {
     "hooks": {
