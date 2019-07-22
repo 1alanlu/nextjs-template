@@ -1,10 +1,28 @@
-# Next.js Template
+# NextJs 模板 (Next.js Template)
 
-NextJs 模板
+## 內容
+
+### 基本 (Base)
 
 - [x] ESlint + StyleLint + Prettier
 - [x] husky + lint-staged
 - [x] scss(module) / styled-components
+
+### 附加 (Bonus)
+
+- [x] GA (Google Analytics)
+- [x] SEO (Search Engine Optimization)
+- [x] AOS (Animate On Scroll Library)
+
+### 佈署 (Deploy)
+
+- [x] GitHub 分支 (git push origin gh-pages)
+- [ ] ZEIT Now
+
+### 其他 (Other)
+
+- [ ] AMP (Accelerated Mobile Pages)
+- [ ] PWA (Progressive Web App)
 
 ## Folder Structure
 
@@ -95,4 +113,20 @@ NextJs 模板
 ├── package.json (專案 配置)
 ├── README.md
 └── yarn.lock
+```
+
+### 操作
+
+#### 初始安裝
+
+```bash
+yarn
+yarn deploy:setup
+```
+
+#### 建置佈署
+
+```bash
+yarn qq
+yarn deploy
 ```
