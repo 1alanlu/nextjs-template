@@ -40,9 +40,9 @@
       height: 5px;
       background-color: #ffd99f; }
     .hero-module_heroTabs_CxI5e .hero-module_tabContainer_2M1Lf .hero-module_tab_1QQJA {
+      flex: 1;
       position: relative;
-      margin-top: 30px;
-      flex: 1; }
+      margin-top: 30px; }
       .hero-module_heroTabs_CxI5e .hero-module_tabContainer_2M1Lf .hero-module_tab_1QQJA::before {
         position: absolute;
         display: block;
@@ -95,12 +95,6 @@
     background-color: #fff;
     border: 5px solid #fff;
     cursor: pointer; }
-    @media only screen and (max-width: 559px) {
-      .hero-module_hero_31aYo > *:nth-child(1), .hero-module_hero_31aYo > *:nth-child(2), .hero-module_hero_31aYo > *:nth-child(3), .hero-module_hero_31aYo > *:nth-child(4) {
-        float: none;
-        width: 100%;
-        height: 50%;
-        flex: 1; } }
     .hero-module_hero_31aYo > * .hero-module_bg_3ZcGT {
       background-color: #ffd99f;
       background-size: cover;
@@ -127,13 +121,20 @@
     .hero-module_hero_31aYo > *:hover .hero-module_mask_2vaFX, .hero-module_hero_31aYo > *:active .hero-module_mask_2vaFX {
       bottom: 0; }
     .hero-module_hero_31aYo > *:nth-child(1), .hero-module_hero_31aYo > *:nth-child(2) {
-      width: 50%;
-      height: 50%;
-      flex: 1; }
+      flex: 1;
+      width: 50%; }
+      @media only screen and (max-width: 559px) {
+        .hero-module_hero_31aYo > *:nth-child(1), .hero-module_hero_31aYo > *:nth-child(2) {
+          width: 100%; } }
     .hero-module_hero_31aYo > *:nth-child(3), .hero-module_hero_31aYo > *:nth-child(4) {
       float: right;
       width: 25%;
       height: 100%; }
+      @media only screen and (max-width: 559px) {
+        .hero-module_hero_31aYo > *:nth-child(3), .hero-module_hero_31aYo > *:nth-child(4) {
+          flex: 1;
+          float: none;
+          width: 100%; } }
 
 .block-module_block_3Wnej {
   position: relative;
@@ -343,8 +344,8 @@
   align-content: center; }
   .hobbies-module_hobbies_3edhL > * {
     padding-top: 33.33333%;
-    position: relative;
-    flex: 1 0 33%; }
+    flex: 1 0 33%;
+    position: relative; }
 
 .circularChart-module_singleChart_3DzQs .circularChart-module_text_3zm5F {
   position: absolute;
@@ -858,11 +859,11 @@
     flex-direction: column; }
     .vertical-timeline-element-content .resumeProjectsBlock-photos .photo {
       padding-top: 56.25%;
+      flex: 1;
       position: relative;
       overflow: hidden;
       margin-bottom: 5px;
-      width: 100%;
-      flex: 1; }
+      width: 100%; }
   .vertical-timeline-element-content .resumeProjectsBlock-technologies {
     margin-top: 10px; }
     .vertical-timeline-element-content .resumeProjectsBlock-technologies div {
