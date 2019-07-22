@@ -21,7 +21,10 @@
     "server:prod": "cross-env NODE_ENV=production node server/index.js",
     "precommit": "lint-staged",
     "qq": "yarn build && yarn export",
-    "deploy": "git push origin --delete gh-pages && git add src/out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix src/out origin gh-pages"
+    "deploy:setup": "git branch gh-pages",
+    "deploy:check": "git checkout --orphan gh-pages && git reset --hard && git commit --allow-empty -m \"Init\" & git checkout master",
+    "deploy:pre": "rmdir /s /q \"src/out\" && git worktree add src/out gh-pages",
+    "deploy": "git add src/out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix src/out origin gh-pages"
   },
   "husky": {
     "hooks": {
